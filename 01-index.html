@@ -1,0 +1,914 @@
+<！doctype 超文本标记语言>
+<超文本标记语言 朗="zh-CN">"zh-CN">
+<头>
+<元字符集<元字符集="UTF-8">"UTF-8">
+<元名称<元名称=“视口”内容=“宽度=设备宽度，初始比例=1.0”>“视口”内容=“宽度=设备宽度，初始比例=“视口”内容=“宽度=设备宽度，初始比例=1.0”>
+<元名称<元名称="描述"内容="探索Linux开发的无限可能，加入全球数百万开发者的行列，体验开源世界的自由与创新">"描述"内容="探索Linux开发的无限可能，加入全球数百万开发者的行列，体验开源世界的自由与创新">
+<元名称<元名称="关键字"内容="Linux，开发，开源，编程，命令行，容器，DevOps">"关键字"内容="Linux，开发，开源，编程，命令行，容器，DevOps">
+<标题>Linux开发-自由与创新的世界</标题>
+<"PRECONNECT"="PRECONNECT"href="https://fonts.googleapis.com">
+<"PRECONNECT"="PRECONNECT"href="https://fonts.gstatic.com"交叉原点>
+<链接 <链接="link<linkHTTPS://字体。googleapis.com/CSS2？family=Inter:wwt@300；400；500；600；700="HTTPS：//字体。Googleapis.com/CSS2？family=Inter:wwt@300；400；500；600；700rel&display=swap"rel="stylesheet">"stylesheet">="HTTPS://字体。googleapis.com/CSS2？family=Inter:wwt@300；400；500；600；700&display=swap"rel="stylesheet">href="HTTPS://字体。googleapis.com/CSS2？family=Inter:wwt@300；400；500；600；700&display=swap"rel="stylesheet">
+<风格>
+：根
+--主：--主：
+--主暗：--主暗：
+--辅：
+--bg-dark：--
+--
+--
+--
+--
+--边界：--边界：
+--成功：--成功：--成功：--成功：#238636；；
+--成功悬停：--成功悬停：--成功悬停：--成功悬停：#2ea043；ea043；
+--过渡：所有
+--阴影：
+--
+--半径：
+--半径
+}
+
+*
+页边距：0；
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* 导航栏样式 */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(13, 17, 23, 0.9);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            width: 24px;
+            height: 24px;
+            fill: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* 主内容区样式 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* 英雄区域样式 */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-top: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.1;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1.5rem;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin-bottom: 2.5rem;
+            color: var(--text-secondary);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .cta-button {
+            background-color: var(--success);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border: none;
+            border-radius: var(--radius);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cta-button:hover {
+            background-color: var(--success-hover);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .cta-button.secondary {
+            background-color: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+        }
+
+        .cta-button.secondary:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-color: var(--primary);
+        }
+
+        /* 内容区块样式 */
+        .section {
+            padding: 6rem 0;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 3px;
+        }
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem 2rem;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            background-color: var(--bg-card-hover);
+        }
+
+        .card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 1.5rem;
+            fill: var(--primary);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .card-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: auto;
+            transition: var(--transition);
+        }
+
+        .card-link:hover {
+            gap: 0.8rem;
+        }
+
+        /* 拼接加载动画样式 */
+        .loading-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            gap: 2px;
+            width: 100px;
+            height: 100px;
+            margin: 3rem auto;
+        }
+
+        .grid-cell {
+            background-color: var(--primary);
+            opacity: 0;
+            transform: scale(0);
+            transition: opacity 0.3s, transform 0.3s;
+            border-radius: 2px;
+        }
+
+        .loading-grid.animate .grid-cell {
+            animation: cellAppear 0.5s forwards;
+        }
+
+        /* 为每个格子设置不同的动画延迟 */
+        .grid-cell:nth-child(1) { animation-delay: 0.05s; }
+        .grid-cell:nth-child(2) { animation-delay: 0.1s; }
+        .grid-cell:nth-child(3) { animation-delay: 0.15s; }
+        .grid-cell:nth-child(4) { animation-delay: 0.2s; }
+        .grid-cell:nth-child(5) { animation-delay: 0.25s; }
+        .grid-cell:nth-child(6) { animation-delay: 0.1s; }
+        .grid-cell:nth-child(7) { animation-delay: 0.15s; }
+        .grid-cell:nth-child(8) { animation-delay: 0.2s; }
+        .grid-cell:nth-child(9) { animation-delay: 0.25s; }
+        .grid-cell:nth-child(10) { animation-delay: 0.3s; }
+        .grid-cell:nth-child(11) { animation-delay: 0.15s; }
+        .grid-cell:nth-child(12) { animation-delay: 0.2s; }
+        .grid-cell:nth-child(13) { animation-delay: 0.25s; }
+        .grid-cell:nth-child(14) { animation-delay: 0.3s; }
+        .grid-cell:nth-child(15) { animation-delay: 0.35s; }
+        .grid-cell:nth-child(16) { animation-delay: 0.2s; }
+        .grid-cell:nth-child(17) { animation-delay: 0.25s; }
+        .grid-cell:nth-child(18) { animation-delay: 0.3s; }
+        .grid-cell:nth-child(19) { animation-delay: 0.35s; }
+        .grid-cell:nth-child(20) { animation-delay: 0.4s; }
+        .grid-cell:nth-child(21) { animation-delay: 0.25s; }
+        .grid-cell:nth-child(22) { animation-delay: 0.3s; }
+        .grid-cell:nth-child(23) { animation-delay: 0.35s; }
+        .grid-cell:nth-child(24) { animation-delay: 0.4s; }
+        .grid-cell:nth-child(25) { animation-delay: 0.45s; }
+
+        @keyframes cellAppear {
+            0% {
+                opacity: 0;
+                transform: scale(0) rotate(0deg);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.2) rotate(5deg);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
+        /* 页脚样式 */
+        footer {
+            background-color: var(--bg-card);
+            padding: 4rem 0 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            width: 20px;
+            height: 20px;
+            fill: var(--text-secondary);
+            transition: var(--transition);
+        }
+
+        .social-links a:hover .social-icon {
+            fill: var(--primary);
+        }
+
+        .copyright {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--bg-dark);
+                flex-direction: column;
+                padding: 1rem 0;
+                border-top: 1px solid var(--border);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 0.8rem 2rem;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero {
+                padding-top: 6rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .cta-button {
+                justify-content: center;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        /* 进度条样式 */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            z-index: 1001;
+            transition: width 0.3s ease;
+        }
+
+        /* 返回顶部按钮 */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+            box-shadow: var(--shadow);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <!-- 进度条 -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- 返回顶部按钮 -->
+    <button class="back-to-top" id="backToTop">
+        <svg class="logo-icon" viewBox="0 0 24 24">
+            <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+        </svg>
+    </button>
+
+    <!-- 导航栏 -->
+    <nav>
+        <div class="logo">
+            <svg class="logo-icon" viewBox="0 0 24 24">
+                <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,16.5L6.5,12L7.91,10.59L11,13.67L16.09,8.59L17.5,10L11,16.5Z" />
+            </svg>
+            Linux Dev
+        </div>
+        <div class="nav-links" id="navLinks">
+            <a href="#features">特性</a>
+            <a href="#tools">工具</a>
+            <a href="#community">社区</a>
+            <a href="#resources">资源</a>
+        </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 12h18M3 6h18M3 18h18"/>
+            </svg>
+        </button>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <section class="hero">
+        <div class="hero-bg">
+            <!-- 背景图案 -->
+            <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+                <defs>
+                    <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+                        <path d="M 10 0 L 0 0 0 10" fill="none" stroke="currentColor" stroke-width="0.5"/>
+                    </pattern>
+                </defs>
+                <rect width="100" height="100" fill="url(#grid)"/>
+            </svg>
+        </div>
+        <h1>探索Linux开发的无限可能</h1>
+        <p>加入全球数百万开发者的行列，体验开源世界的自由与创新。Linux为开发者提供了无与伦比的灵活性和控制力。</p>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                </svg>
+            </button>
+            <button class="cta-button secondary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M12 16v-4M12 8h.01"/>
+                    
+                
+                
+                
+                
+                
+                
+            </button>
+        </div>
+        <div class="loading-grid" id="heroLoader">
+            <!-- 通过JavaScript动态添加格子 -->
+        </div>
+    </section>
+    <!-- 主要内容区 -->
+    <div class="container">
+        <!-- 特性介绍 -->
+        <section id="features" class="section">
+            <h2 class="section-title">Linux开发优势</h2>
+            <div class="card-container">
+                <div class="card">
+                    <svg class="card-icon" viewBox="0 0 24 24">
+                        <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7C13.4,7 14.8,8.6 14.8,10V11.5C15.4,11.5 16,12.1 16,12.7V16.5C16,17.1 15.4,17.7 14.8,17.7H9.2C8.6,17.7 8,17.1 8,16.5V12.6C8,12 8.6,11.4 9.2,11.4V10C9.2,8.6 10.6,7 12,7M12,8.2C11.2,8.2 10.5,8.7 10.5,9.5V11.5H13.5V9.5C13.5,8.7 12.8,8.2 12,8.2Z"/>
+                    </svg>
+                    <h3>完全自由</h3>
+                    <p>Linux是完全开源的操作系统，您可以自由使用、修改和分发代码，没有任何限制。从内核到应用程序，一切尽在掌握。</p>
+                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            </svg>
+                    </a>
+                </div>
+                <div class="card">
+                    <svg class="card-icon" viewBox="0 0 24 24">
+                        <path d="M2,5H8V7H4V17H8V19H2V5M7,17V15H9V17H7M11,5H15V19H11V5M13,17V15H15V17H13M18,5H22V7H20V17H22V19H18V5Z"/>
+                    </svg>
+                    <h3>强大的命令行</h3>
+                    <p>Linux提供了强大而灵活的命令行工具，让开发工作更加高效。通过脚本自动化任务，提升工作效率。</p>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                           </svg>
+                    </a>
+                </div>
+                <div class="card">
+                    <svg class="card-icon" viewBox="0 0 24 24">
+                        <path d="M21,16.5C21,16.88 20.79,17.21 20.47,17.38L12.57,21.82C12.41,21.94 12.21,22 12,22C11.79,22 11.59,21.94 11.43,21.82L3.53,17.38C3.21,17.21 3,16.88 3,16.5V7.5C3,7.12 3.21,6.79 3.53,6.62L11.43,2.18C11.59,2.06 11.79,2 12,2C12.21,2 12.41,2.06 12.57,2.18L20.47,6.62C20.79,6.79 21,7.12 21,7.5V16.5M12,4.15L5,8.09V15.91L12,19.85L19,15.91V8.09L12,4.15Z"/>
+                    </svg>
+                    <h3>丰富的开发工具</h3>
+                    <p>从文本编辑器到IDE，从编译器到调试器，Linux拥有完整的开发工具链。支持几乎所有编程语言和框架。</p>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="loading-grid">
+                <!-- 通过JavaScript动态添加格子 -->
+            </div>
+        </section>
+
+        <!-- 开发工具 -->
+        <section id="tools" class="section">
+            <h2 class="section-title">必备开发工具</h2>
+            <div class="card-container">
+                <div class="card">
+                    <svg class="card-icon" viewBox="0 0 24 24">
+                        <path d="M14.6,16.6L19.2,12L14.6,7.4L16,6L22,12L16,18L14.6,16.6M9.4,16.6L4.8,12L9.4,7.4L8,6L2,12L8,18L9.4,16.6Z"/>
+                    </svg>
+                    <h3>Vim / Emacs</h3>
+                    <p>两大经典文本编辑器，提供高效的代码编辑体验。通过插件系统扩展功能，满足各种开发需求。</p>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          </svg>
+                    </a>
+                </div>
+                <div class="card">
+                    <svg class="card-icon" viewBox="0 0 24 24">
+                        <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M11,16.5L18,9.5L16.59,8.09L11,13.67L7.91,10.59L6.5,12L11,16.5Z"/>
+                    </svg>
+                    <h3>GCC / Clang</h3>
+                    <p>强大的编译器套件，支持多种编程语言。提供优化的代码生成和丰富的调试信息。</p>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        </svg>
+                    </a>
+                </div>
+                <div class="card">
+                    <svg class="card-icon" viewBox="0 0 24 24">
+                        <path d="M2,3H22C23.05,3 24,3.95 24,5V19C24,20.05 23.05,21 22,21H2C0.95,21 0,20.05 0,19V5C0,3.95 0.95,3 2,3M14,6V7H22V6H14M14,8V9H21.5L22,9V8H14M14,10V11H21V10H14M8,13.91C6,13.91 2,15 2,17V18H14V17C14,15 10,13.91 8,13.91M8,6A3,3 0 0,0 5,9A3,3 0 0,0 8,12A3,3 0 0,0 11,9A3,3 0 0,0 8,6Z"/>
+                    </svg>
+                    <h3>Git</h3>
+                    <p>分布式版本控制系统，Linux内核开发的核心工具。有效管理代码版本和团队协作。</p>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        </svg>
+                    </a>
+                </div>
+                <div class="card">
+                    <svg class="card-icon" viewBox="0 0 24 24">
+                        <path d="M19,3A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3H19M5,13V19H19V13H5M5,5V11H19V5H5M7,7H9V9H7V7M17,7H15V9H17V7M7,15H9V17H7V15M17,15H15V17H17V15Z"/>
+                    </svg>
+                    <h3>Docker</h3>
+                    <p>容器化技术，简化开发、测试和部署流程。实现环境一致性，提高应用可移植性。</p>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="loading-grid">
+                <!-- 通过JavaScript动态添加格子 -->
+            </div>
+        </section>
+
+        <!-- 社区支持 -->
+        <section id="community" class="section">
+            <h2 class="section-title">活跃的开发者社区</h2>
+            <div class="card-container">
+                <div class="card">
+                    <svg class="card-icon" viewBox="0 0 24 24">
+                        <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M17,16V14H13.5V13H14.5A1.5,1.5 0 0,0 16,11.5V9.5A1.5,1.5 0 0,0 14.5,8H9.5A1.5,1.5 0 0,0 8,9.5V11.5A1.5,1.5 0 0,0 9.5,13H10.5V14H7V16H10.5V18H13.5V16H17Z"/>
+                    </svg>
+                    <h3>全球协作</h3>
+                    <p>来自世界各地的开发者共同贡献代码，推动Linux生态系统不断发展。参与开源项目，与顶尖开发者交流。</p>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        </svg>
+                    </a>
+                </div>
+                <div class="card">
+                    <svg class="card-icon" viewBox="0 0 24 24">
+                        <path d="M12,3C7.03,3 3,7.03 3,12C3,16.97 7.03,21 12,21C12.83,21 13.5,20.33 13.5,19.5C13.5,19.11 13.35,18.76 13.11,18.49C12.88,18.23 12.73,17.88 12.73,17.5C12.73,16.67 13.4,16 14.23,16H16C18.76,16 21,13.76 21,11C21,6.58 16.97,3 12,3M12.5,6V7.5H11V6H12.5M11,9H12.5V13.75L14.25,15.5L15,14.75L13.75,13.5V9H15V8H11V9Z"/>
+                    </svg>
+                    <h3>即时帮助</h3>
+                    <p>遇到问题时，社区成员总是乐于提供帮助和指导。通过论坛、IRC和邮件列表获取支持。</p>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        </svg>
+                    </a>
+                </div>
+                <div class="card">
+                    <svg class="card-icon" viewBox="0 0 24 24">
+                        <path d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18C5,17.18 8,16 12,16C16,16 19,17.18 19,17.18V13.18C19,13.18 16,14.36 12,14.36C8,14.36 5,13.18 5,13.18Z"/>
+                    </svg>
+                    <h3>知识共享</h3>
+                    <p>丰富的文档、教程和博客文章，帮助您快速掌握Linux开发技能。学习最佳实践，避免常见陷阱。</p>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="loading-grid">
+                <!-- 通过JavaScript动态添加格子 -->
+            </div>
+        </section>
+
+        <!-- 学习资源 -->
+        <section id="resources" class="section">
+            <h2 class="section-title">学习资源</h2>
+            <div class="card-container">
+                <div class="card">
+                    <svg class="card-icon" viewBox="0 0 24 24">
+                        <path d="M18,22A2,2 0 0,0 20,20V4C20,2.89 19.1,2 18,2H12V9L9.5,7.5L7,9V2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18Z"/>
+                    </svg>
+                    <h3>官方文档</h3>
+                    <p>每个Linux发行版都有详细的官方文档，是学习的最佳起点。从安装到高级配置，一应俱全。</p>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        </svg>
+                    </a>
+                </div>
+                <div class="card">
+                    <svg class="card-icon" viewBox="0 0 24 24">
+                        <path d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18C5,17.18 8,16 12,16C16,16 19,17.18 19,17.18V13.18C19,13.18 16,14.36 12,14.36C8,14.36 5,13.18 5,13.18Z"/>
+                    </svg>
+                    <h3>在线课程</h3>
+                    <p>从入门到精通的完整课程，帮助您系统学习Linux开发。理论与实践结合，快速提升技能。</p>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        </svg>
+                    </a>
+                </div>
+                <div class="card">
+                    <svg class="card-icon" viewBox="0 0 24 24">
+                        <path d="M17,13H13V17H11V13H7V11H11V7H13V11H17M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"/>
+                    </svg>
+                    <h3>开源项目</h3>
+                    <p>参与开源项目是提升Linux开发技能的最佳方式。贡献代码，与社区互动，建立个人声誉。</p>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="loading-grid">
+                <!-- 通过JavaScript动态添加格子 -->
+            </div>
+        </section>
+    </div>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Linux开发</h3>
+                    <p>探索开源世界的无限可能，加入全球开发者的行列。</p>
+                    <div class="social-links">
+                        <a href="#">
+                            <svg class="social-icon" viewBox="0 0 24 24">
+                                <path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z"/>                            </svg>
+                        </a>
+                        <a href="#">
+                            <svg class="social-icon" viewBox="0 0 24 24">
+                                <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z"/>
+                            </svg>
+                        </a>
+                        <a href="#">
+                            <svg class="social-icon" viewBox="0 0 24 24">
+                                <path d="M19,3A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3H19M18.5,18.5V13.2A3.26,3.26 0 0,0 15.24,9.94C14.39,9.94 13.4,10.46 12.92,11.24V10.13H10.13V18.5H12.92V13.57C12.92,12.8 13.54,12.17 14.31,12.17A1.4,1.4 0 0,1 15.71,13.57V18.5H18.5M6.88,8.56A1.68,1.68 0 0,0 8.56,6.88C8.56,5.95 7.81,5.19 6.88,5.19A1.69,1.69 0 0,0 5.19,6.88C5.19,7.81 5.95,8.56 6.88,8.56M8.27,18.5V10.13H5.5V18.5H8.27Z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>支持</h3>
+                    <div class="footer-links">
+                        <a href="#">帮助中心</a>
+                        <a href="#">常见问题</a>
+                        <a href="#">联系我们</a>
+                        <a href="#">服务状态</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>法律</h3>
+                    <div class="footer-links">
+                        <a href="#">隐私政策</a>
+                        <a href="#">使用条款</a>
+                        <a href="#">Cookie政策</a>
+                        <a href="#">版权声明</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy;2021～2025Linux开发社区. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 创建格子元素
+        function createGridCells(gridElement) {
+            for (let i = 0; i < 25; i++) {
+                const cell = document.createElement('div');
+                cell.classList.add('grid-cell');
+                gridElement.appendChild(cell);
+            }
+        }
+
+        // 初始化所有网格
+        document.querySelectorAll('.loading-grid').forEach(grid => {
+            createGridCells(grid);
+        });
+
+        // 滚动动画效果
+        const sections = document.querySelectorAll('.section');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    
+                    // 触发网格动画
+                    const grid = entry.target.querySelector('.loading-grid');
+                    if (grid) {
+                        grid.classList.add('animate');
+                    }
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // 英雄区域的网格动画
+        const heroLoader = document.getElementById('heroLoader');
+        heroLoader.classList.add('animate');
+        
+        // 移动菜单切换
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // 滚动进度条
+        const progressBar = document.getElementById('progressBar');
+        
+        window.addEventListener('scroll', () => {
+Const WINDOWHEIGHT=document.documentElement.scrollHeight-document.documentElement.clientHeight；
+const scrolled=(window.scrollY/WINDOWHEIGHT)*100；
+progressBar.style.width=scrolled+'%'；
+        });
+
+// 返回顶部按钮
+Const backToTop=document.getElementById('backToTop')；
+        
+window.addEventListener('scroll'，()=>{
+if(window.scrollY>300){
+backToTop.classList.add('visible')；
+}else{
+backToTop.classList.remove('visible')；
+            }
+        });
+        
+backToTop.addEventListener('click'，()=>{
+window.scrollTo({
+top:0，
+行为：“平滑”
+            });
+        });
+
+//优化性能：使用requestAnimationFrame处理滚动事件
+让滴答=false；
+        
+函数updateOnScroll(){
+// 这里可以添加其他需要在滚动时更新的元素
+滴答=假；
+        }
+        
+window.addEventListener('scroll'，()=>{
+if(！ticking){
+requestAnimationFrame(updateOnScroll)；
+滴答=真；
+            }
+        });
+</script>
+</body>
+</html>
