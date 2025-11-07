@@ -1,39 +1,39 @@
-<>html>
-<超文本标记语言>
-<头>
-<"UTF-8"charset="UTF-8">
-<>>茶山中心小学（六（标题>>
-<风格>
-/* 页面基础样式 */
-正文
-字体系列：微软雅黑；
-最大宽度：
-页边距：
-填料：
-}
-/* 折叠组件样式 */
-详细信息
-边框：
-边界半径：
-填充：
-底边距：
-}
-摘要
-字体大小：
-字体粗细：粗体；
-游标：指针；
-}
-/* 照片网格（折叠后默认隐藏） */
-.照片墙
-显示：网格；
-网格模板列：重复
-间隙：20px；
-margin-top:15px；
-}
-.st学生照片{
-文本对齐：居中；
-边框：1px实心#eee；
-填充：10px；
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>茶山中心小学（六（3）班）</title>
+    <style>
+        /* 页面基础样式 */
+        body {
+            font-family: 微软雅黑;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        /* 折叠组件样式 */
+        details {
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        summary {
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer; /* 鼠标悬浮显示手型 */
+        }
+        /* 照片网格（折叠后默认隐藏） */
+        .photo-wall {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+        .student-photo {
+            text-align: center;
+            border: 1px solid #eee;
+            padding: 10px;
             border-radius: 8px;
         }
         .student-photo img {
@@ -41,8 +41,7 @@ margin-top:15px；
             height: 200px;
             object-fit: cover;
             border-radius: 4px;
-        }
-    </style>
+        }    </style>
 </head>
 <body>
     <!-- details默认折叠（最小区域），summary是展开/收缩的标题 -->
@@ -167,46 +166,10 @@ margin-top:15px；
                 <p>覃东阳</p>
             </div>
            
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-                
-                
-                
             </div>
         </div>
     </details>
 </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </html>
     <footer>
         <p>&copy; 2025 我的网站. 保留所有权利.</p>
