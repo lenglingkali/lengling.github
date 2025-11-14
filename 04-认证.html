@@ -1,1 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网站实名备案与认证证明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "SimHei", "Microsoft YaHei", sans-serif;
+        }
+        body {
+            background-color: #f8f9fa;
+            padding: 30px 0;
+        }
+        .cert-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 50px;
+            border: 1px solid #eee;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: relative;
+        }
+        .cert-header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 20px;
+        }
+        .cert-title {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+        .cert-code {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            font-size: 14px;
+            color: #4a5568;
+        }
+        .cert-intro {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #4a5568;
+            margin-bottom: 30px;
+            text-indent: 2em;
+        }
+        .cert-section {
+            margin-bottom: 30px;
+        }
+        .section-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .section-title::before {
+            content: "●";
+            color: #1890ff;
+            margin-right: 8px;
+        }
+        .info-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 15px;
+            color: #4a5568;
+        }
+        .info-item {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+        }
+        .info-label {
+            width: 120px;
+            font-weight: 500;
+            color: #2d3748;
+        }
+        .info-value {
+            flex: 1;
+        }
+        .compliance-list {
+            list-style: decimal;
+            padding-left: 2em;
+            font-size: 15px;
+            line-height: 2;
+            color: #4a5568;
+        }
+
+        /* ========== 适配印章图片的容器（匹配你标记的轮廓） ========== */
+        .cert-seal {
+            /* 匹配截图中红色框的位置+尺寸 */
+            width: 100%;
+            height: 180px; /* 对应标记区域的高度 */
+            margin-top: 20px;
+            position: relative;
+        }
+        /* 印章图片容器（贴合标记的轮廓） */
+        .seal-img-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* 按你标记的红色框尺寸调整 */
+            width: 280px; 
+            height: 150px;
+        }
+        /* 印章图片：自动适配容器+保持比例 */
+        .seal-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* 避免图片变形，贴合轮廓 */
+        }
+        /* 日期位置调整（对应截图） */
+        .seal-date {
+            position: absolute;
+            top: 50px;
+            left: 300px; /* 放在印章右侧，匹配截图布局 */
+            font-size: 14px;
+            color: #4a5568;
+        }
+
+        .cert-tip {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f0f8fb;
+            border-left: 4px solid #1890ff;
+            font-size: 14px;
+            color: #4a5568;
+            line-height: 1.6;
+        }
+        @media print {
+            body {
+                background: #fff;
+                padding: 0;
+            }
+            .cert-container {
+                box-shadow: none;
+                border: none;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cert-container">
+        <!-- 证明头部 -->
+        <div class="cert-header">
+            <h1 class="cert-title">网站实名备案与认证证明</h1>
+            <div class="cert-code">
+                <div>备案编号：粤ICP备3895073675号-346</div>
+                <div>证书编号：RA202538950562</div>
+            </div>
+        </div>
+
+        <!-- 证明引言 -->
+        <p class="cert-intro">
+            根据《中华人民共和国网络安全法》《互联网信息服务管理办法》等相关法律法规要求，经审核，以下主体及网站已完成实名验证、备案登记及合规认证，信息真实有效，现予以证明。
+        </p>
+
+        <!-- 主体实名信息 -->
+        <div class="cert-section">
+            <h2 class="section-title">一、主体实名信息</h2>
+            <div class="info-list">
+                <div class="info-item">
+                    <span class="info-label">主体名称：</span>
+                    <span class="info-value">个人所用</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">社会信用代码：</span>
+                    <span class="info-value">91440101MA5970</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">证件核验结果：</span>
+                    <span class="info-value">已通过市场监管局信息核验</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">实名认证日期：</span>
+                    <span class="info-value">2025年7月20日</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 网站备案信息 -->
+        <div class="cert-section">
+            <h2 class="section-title">二、网站备案信息</h2>
+            <div class="info-list">
+                <div class="info-item">
+                    <span class="info-label">网站名称：</span>
+                    <span class="info-value">无固定名</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">网站域名：</span>
+                    <span class="info-value">lenglingkali.com（已完成域名实名认证）</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">服务器IP地址：</span>
+                    <span class="info-value">192.168.1.173</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">服务类型：</span>
+                    <span class="info-value">个人服务</span>
+                </div>
+                <div class="info-item">
+                <span class="info-label">备案通过日期：</span>
+                    <span class="info-value">2025年7月28日</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">审核机构：</span>
+                    <span class="info-value">广东省通信管理局</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 认证合规说明 -->
+        <div class="cert-section">
+            <h2 class="section-title">三、认证合规说明</h2>
+            <ul class="compliance-list">
+                <li>本主体已提交真实有效身份证明文件，完成实名认证流程；</li>
+                <li>网站信息符合互联网信息服务备案管理要求，无违法违规内容承诺；</li>
+                <li>本证明有效期为长期，需每年完成真实性核验更新；</li>
+                <li>备案编号可通过工信部ICP/IP地址/域名信息备案管理系统查询核实。</li>
+            </ul>
+        </div>
+
+        <!-- ========== 替换为印章图片（匹配你标记的轮廓） ========== -->
+        <div class="cert-seal">
+            <!-- 印章图片容器：尺寸匹配你标记的红色框 -->
+            <div class="seal-img-container">
+                <!-- 引入印章.jpg（请确保图片与HTML文件在同一文件夹） -->
+                <img src="印章.jpg" alt="备案专用章" class="seal-img">
+            </div>
+            </div>
+        </div>
+
+        <!-- 提示信息 -->
+        <div class="cert-tip">
+            提示：本证明为电子凭证，与纸质证明具有同等效力，可通过备案编号在工信部官网验证真伪，严禁伪造、篡改、冒用。
+        </div>
+    </div>
+
+    <script>
+        // 适配打印样式
+        window.matchMedia('print').addEventListener('change', (e) => {
+            if (!e.matches) {
+                document.body.style.background = '#f8f9fa';
+            }
+        });
+    </script>
+</body>
+</html>
 
