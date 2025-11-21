@@ -48,24 +48,16 @@
             font-size: clamp(1.8rem, 5vw, 2.5rem);
         }
 
-        /* 日记项（全设备自适应） */
+        /* 日记项（匹配截图的紧凑排版） */
         .update-item {
             background: white;
             padding: clamp(15px, 4vw, 25px);
             margin-bottom: clamp(10px, 3vw, 20px);
             border-radius: clamp(6px, 2vw, 8px);
             box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        /* 触控设备hover优化 */
-        @media (hover: hover) {
-            .update-item:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-            }
         }
 
-        /* 日期与内容 */
+        /* 日期与内容（匹配截图的段落样式） */
         .update-date {
             font-size: 0.9rem;
             color: #666;
@@ -73,38 +65,57 @@
             display: block;
         }
         .update-content {
-            line-height: 1.7;
+            line-height: 1.8;
+            font-size: 1rem;
         }
         .update-content p {
-            margin-bottom: clamp(6px, 1.5vw, 8px);
-            display: flex;
-            align-items: flex-start;
-            gap: 8px;
+            margin-bottom: clamp(8px, 2vw, 15px);
         }
-        .update-content p::before {
-            content: "•";
-            margin-top: 0.3rem;
+        /* 链接样式（匹配截图的长文本换行） */
+        .update-content a {
+            word-break: break-all;
+            color: #333;
+            text-decoration: none;
         }
-        .update-content p:last-child {
-            margin-bottom: 0;
+
+        /* 页脚 */
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 5px 0;
+            width: 100%;
+        }
+        footer a {
+            display: block;
+            color: #2196f3;
+            font-size: clamp(10px, 1.5vw, 12px);
+            text-decoration: none;
+            margin: 1px auto;
+            line-height: 1.2;
+            max-width: 90%;
         }
     </style>
 </head>
 <body>
     <h1>更新日记</h1>
 
-    <!-- 日记项 1 -->
+    <!-- 日记项 1（匹配截图内容） -->
     <div class="update-item">
         <span class="update-date">2025-11-2-网站搭建</span>
         <div class="update-content">
-            <p>2025.11.2 网站开始搭建，网址中未出现（github）字样的都是我搭建的临时服务网站，主要以测试为主！不建议当主网站使用!</p>
-            <p>如果想要永久可以访问的网站请复制粘贴：https://lenglingkali.github.io/lengling.github/01-index.html</p>
-            <p>再次注意：网址中没有（github）字母的话不是永久可以访问的网站，只是测试用的！比如：http://22d385a.r37.cpolar.top/01-index.html也只是测试网站！🤓</p>
-            <p>再分辨不出来我超市你🤬</p>
+            <p>要注意分辨狗哥做的测试网站和永久可以访问的主网站！带有github的位置就是可以永久访问的网站地址！</p
+            <p>永久可以访问的网站请复制粘贴</p>
+            <p><a href="https://lenglingkali.github.io/lengling.github/index.html">lenglingkali.github.io/lengling.github/index.html</a></p>
+            <p>网址中没有（github）</p>
+            <p>不是永久可以访问的网</p>
+            <p>则试用的！比如：</p>
+            <p>385a.r37.cpolar.top/index.html</p>
+            <p>也只是测试网站！🤓</p>
+            <p>再认不出我超市你😏</p>
         </div>
     </div>
 
-    <!-- 日记项 2 -->
+    <!-- 保留其他日记项（如需匹配截图可继续调整内容） -->
     <div class="update-item">
         <span class="update-date">2025-11-15-照片下架</span>
         <div class="update-content">
@@ -113,7 +124,6 @@
         </div>
     </div>
 
-    <!-- 日记项 3 -->
     <div class="update-item">
         <span class="update-date">2025-11-15-照片重新上架</span>
         <div class="update-content">
@@ -124,49 +134,43 @@
         </div>
     </div>
 
-    <!-- 日记项 4 -->
     <div class="update-item">
         <span class="update-date">2025-11-16-服务器暂停</span>
         <div class="update-content">
             <p>因为部署的照片和编写的网页代码的bug太多了，加上照片太迷糊，给个个访客的体验可能有所下降，基于这些原因所以才让服务器的网页访问权限关闭！</p>
-           </div>
+        </div>
+    </div>
+
+    <div class="update-item">
+        <span class="update-date">2025-11-18-网站重新开始搭建</span>
+        <div class="update-content">
+            <p>是我搞错了，不是我自己代码的问题，也不是bug和服务器的问题，是网站使用的服务商：CLOUDFLARE崩溃了，使以才导致我的网站也崩溃，现在重新运维网站！</p>
+            <p>主要是狗哥我也不知道啊！大家可以去搜索一下CLOUDFLARE崩溃事件。</p>
+<p>这次事件也波及了很多的使用CLOUDFLARE服务的网站，比如GPT，谷歌等......</p>
+        </div>
     </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- 日记项 4 -->
     <div class="update-item">
         <span class="update-date">2025-11......</span>
         <div class="update-content">
             <p>......</p>
             <p>......</p>
-            </div>
+        </div>
     </div>
-<!-- 极致小巧+仅这段文字居中 -->
-<footer style="text-align: center; margin-top: auto; padding: 5px 0; width: 100%;">
-    <a href="https://lenglingkali.github.io/lengling.github/认证.html" target="blank" style="display: block; color: #2196f3; font-size: clamp(10px, 1.5vw, 12px); text-decoration: none; margin: 1px auto; line-height: 1.2; max-width: 90%;">
-        &copy; 2025 我的网站. 保留所有权利.
-    </a>
-    <a href="https://lenglingkali.github.io/lengling.github/认证.html" target="blank" style="display: block; color: #2196f3; font-size: clamp(10px, 1.5vw, 12px); text-decoration: none; margin: 1px auto; line-height: 1.2; max-width: 90%;">
-        赖** 已实名.归我所有!
-    </a>
-</footer>
+
+
+
+
+
+
+    <footer>
+        <a href="https://lenglingkali.github.io/lengling.github/认证.html" target="blank">
+            &copy; 2025 我的网站. 保留所有权利.
+        </a>
+        <a href="https://lenglingkali.github.io/lengling.github/认证.html" target="blank">
+            赖** 已实名.归我所有!
+        </a>
+    </footer>
 </body>
 </html>
