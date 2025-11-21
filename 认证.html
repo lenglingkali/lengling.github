@@ -67,16 +67,15 @@
             margin-right: 8px;
         }
         .info-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
+            /* 改为块级布局，匹配截图的上下排列 */
+            display: block;
             font-size: 15px;
             color: #4a5568;
         }
         .info-item {
-            flex: 1;
-            min-width: 300px;
+            /* 每行单独显示，匹配截图样式 */
             display: flex;
+            margin-bottom: 12px;
         }
         .info-label {
             width: 120px;
@@ -94,36 +93,27 @@
             color: #4a5568;
         }
 
-        /* ========== 适配印章图片的容器（匹配你标记的轮廓） ========== */
+        /* 修正印章区域布局（匹配截图） */
         .cert-seal {
-            /* 匹配截图中红色框的位置+尺寸 */
-            width: 100%;
-            height: 180px; /* 对应标记区域的高度 */
-            margin-top: 20px;
-            position: relative;
+            margin-top: 40px;
+            display: flex;
+            align-items: center;
         }
-        /* 印章图片容器（贴合标记的轮廓） */
+        /* 印章图片容器：调整为圆形印章的标准尺寸 */
         .seal-img-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            /* 按你标记的红色框尺寸调整 */
-            width: 280px; 
+            width: 150px; 
             height: 150px;
         }
-        /* 印章图片：自动适配容器+保持比例 */
         .seal-img {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* 避免图片变形，贴合轮廓 */
+            object-fit: contain;
         }
-        /* 日期位置调整（对应截图） */
+        /* 日期位置：放在印章右侧，匹配截图 */
         .seal-date {
-            position: absolute;
-            top: 50px;
-            left: 300px; /* 放在印章右侧，匹配截图布局 */
-            font-size: 14px;
-            color: #4a5568;
+            margin-left: 20px;
+            font-size: 16px;
+            color: #2d3748;
         }
 
         .cert-tip {
@@ -187,7 +177,7 @@
             </div>
         </div>
 
-        <!-- 网站备案信息 -->
+        <!-- 网站备案信息（匹配截图的显示格式） -->
         <div class="cert-section">
             <h2 class="section-title">二、网站备案信息</h2>
             <div class="info-list">
@@ -208,7 +198,7 @@
                     <span class="info-value">个人服务</span>
                 </div>
                 <div class="info-item">
-                <span class="info-label">备案通过日期：</span>
+                    <span class="info-label">备案通过日期：</span>
                     <span class="info-value">2025年7月28日</span>
                 </div>
                 <div class="info-item">
@@ -229,13 +219,14 @@
             </ul>
         </div>
 
-        <!-- ========== 替换为印章图片（匹配你标记的轮廓） ========== -->
+        <!-- 修正后的印章+日期区域（匹配截图） -->
         <div class="cert-seal">
-            <!-- 印章图片容器：尺寸匹配你标记的红色框 -->
             <div class="seal-img-container">
-                <!-- 引入印章.jpg（请确保图片与HTML文件在同一文件夹） -->
                 <img src="印章.jpg" alt="备案专用章" class="seal-img">
             </div>
+            <div class="seal-date">
+                <p>（审核机构盖章）</p>
+                <p>2025年7月28日</p>
             </div>
         </div>
 
@@ -255,4 +246,3 @@
     </script>
 </body>
 </html>
-
