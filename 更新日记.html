@@ -2,182 +2,111 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>更新日记</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>班级照片网站 - 更新日记</title>
     <style>
-        /* 基础重置 + 全局适配 */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-        }
-        html {
-            font-size: clamp(14px, 2vw, 16px); /* 文字随屏幕自动缩放 */
-        }
-        body {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: clamp(20px, 5vw, 40px) clamp(15px, 3vw, 20px);
-            background: #f8f9fa;
-            color: #333;
-            min-height: 100vh;
-            transition: background 0.3s, color 0.3s;
-        }
-
-        /* 深色模式适配（跟随系统） */
-        @media (prefers-color-scheme: dark) {
-            body {
-                background: #1a1a1a;
-                color: #f0f0f0;
-            }
-            .update-item {
-                background: #2d2d2d;
-                box-shadow: 0 1px 3px rgba(0,0,0,0.3);
-            }
-            .update-date {
-                color: #aaa;
-            }
-        }
-
-        /* 标题 */
-        h1 {
-            text-align: center;
-            margin-bottom: clamp(20px, 6vw, 40px);
-            font-weight: 600;
-            font-size: clamp(1.8rem, 5vw, 2.5rem);
-        }
-
-        /* 日记项（匹配截图的紧凑排版） */
-        .update-item {
-            background: white;
-            padding: clamp(15px, 4vw, 25px);
-            margin-bottom: clamp(10px, 3vw, 20px);
-            border-radius: clamp(6px, 2vw, 8px);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-        }
-
-        /* 日期与内容（匹配截图的段落样式） */
-        .update-date {
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: clamp(8px, 2vw, 12px);
-            display: block;
-        }
-        .update-content {
-            line-height: 1.8;
-            font-size: 1rem;
-        }
-        .update-content p {
-            margin-bottom: clamp(8px, 2vw, 15px);
-        }
-        /* 链接样式（匹配截图的长文本换行） */
-        .update-content a {
-            word-break: break-all;
-            color: #333;
-            text-decoration: none;
-        }
-
-        /* 页脚 */
-        footer {
-            text-align: center;
-            margin-top: 30px;
-            padding: 5px 0;
-            width: 100%;
-        }
-        footer a {
-            display: block;
-            color: #2196f3;
-            font-size: clamp(10px, 1.5vw, 12px);
-            text-decoration: none;
-            margin: 1px auto;
-            line-height: 1.2;
-            max-width: 90%;
-        }
+        /* 极简美化：适配手机+清晰排版 */
+        body { font-family: "微软雅黑", sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6; }
+        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        .update-item { margin: 20px 0; padding: 15px; background: #f8f9fa; border-left: 4px solid #3498db; }
+        .date { color: #7f8c8d; font-size: 0.9em; margin-bottom: 5px; }
     </style>
 </head>
 <body>
-    <h1>更新日记</h1>
+    <h1>📝 网站更新日记</h1>
 
-    <!-- 日记项 1（匹配截图内容） -->
+    <!-- 更新记录：按时间倒序排列，复制下面的 .update-item 可添加新记录 -->
     <div class="update-item">
-        <span class="update-date">2025-11-2-网站搭建</span>
-        <div class="update-content">
+        <div class="date">2025-11-2-网站搭建</div>
+        <h3>首次上线！班级照片网站发布</h3>
+        <p>·完成照片展示页面，支持查看班级合影和同学单人照<br>·优化手机端适配，加载速度更快</p>
             <p>要注意分辨狗哥做的测试网站和永久可以访问的主网站！带有github的位置就是可以永久访问的网站地址！</p
-            <p>网址中没有（github）</p>
-            <p>不是永久可以访问的网</p>
-            <p>则试用的！比如：</p>
+            <p>网址中没有（github）不是永久可以访问的网站试用的！比如：</p>
             <p>385a.r37.cpolar.top/</p>
             <p>也只是测试网站！🤓</p>
-            <p>再认不出我超市你😏</p>
+            <p>再认不出我超市你🤬</p>
         </div>
     </div>
 
-    <!-- 保留其他日记项（如需匹配截图可继续调整内容） -->
     <div class="update-item">
-        <span class="update-date">2025-11-15-照片下架</span>
-        <div class="update-content">
+        <div class="date">2025-11-15-网站下架</div>
             <p>由于照片太迷糊，并且加载速度过慢，先下架会儿。</p>
             <p>下架后要重新优化代码（倒入库），并且重新找到比较清楚的照片才会重新上架。</p>
         </div>
     </div>
 
+
     <div class="update-item">
-        <span class="update-date">2025-11-15-照片重新上架</span>
-        <div class="update-content">
+        <div class="date">2025-11-15-凌晨-网站重新上架</div>
             <p>算鸟🐦，我还是把照片重新上架了吧！</p>
             <p>如果有高清照片，欢迎发过来给我！</p>
             <p>v：wa529191</p>
             <p>q：3895073675</p>
         </div>
     </div>
+    <div>
 
     <div class="update-item">
-        <span class="update-date">2025-11-16-服务器暂停</span>
-        <div class="update-content">
+        <div class="date">2025-11-18-服务器暂停部署</div>
             <p>因为部署的照片和编写的网页代码的bug太多了，加上照片太迷糊，给个个访客的体验可能有所下降，基于这些原因所以才让服务器的网页访问权限关闭！</p>
-        </div>
     </div>
+    <div>
 
     <div class="update-item">
-        <span class="update-date">2025-11-18-网站重新开始搭建</span>
-        <div class="update-content">
+        <div class="date">2025-11-19-凌晨-网站重新开始部署，访问权限开启</div>
             <p>是我搞错了，不是我自己代码的问题，也不是bug和服务器的问题，是网站使用的服务商：CLOUDFLARE崩溃了，使以才导致我的网站也崩溃，现在重新运维网站！</p>
             <p>主要是狗哥我也不知道啊！大家可以去搜索一下CLOUDFLARE崩溃事件。</p>
 <p>这次事件也波及了很多的使用CLOUDFLARE服务的网站，比如GPT，谷歌等......</p>
         </div>
     </div>
 
-
     <div class="update-item">
-        <span class="update-date">2025-11-22-加快网站照片加载速度</span>
-        <div class="update-content">
+        <div class="date">2025-11-22-提升网站访问和照片加载速度</div>
             <p>22日，凌晨2点钟删除网页照片，把照片压缩后重新部署照片上网站</p>
             <p>该过程持续了32分钟</p>
         </div>
     </div>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <div class="update-item">
-        <span class="update-date">2025-11......</span>
-        <div class="update-content">
+        <div class="date">2025-11......</div>
             <p>......</p>
             <p>......</p>
         </div>
     </div>
 
-
-
-
-
-
-    <footer>
-        <a href="https://lenglingkali.github.io/lengling.github/认证.html" target="blank">
-            &copy; 2025 我的网站. 保留所有权利.
-        </a>
-        <a href="https://lenglingkali.github.io/lengling.github/认证.html" target="blank">
-            赖** 已实名.归我所有!
-        </a>
-    </footer>
+<!-- 极致小巧+仅这段文字居中 -->
+<footer style="text-align: center; margin-top: auto; padding: 5px 0; width: 100%;">
+    <a href="https://lenglingkali.github.io/lengling.github/认证.html" target="blank" style="display: block; color: #2196f3; font-size: clamp(10px, 1.5vw, 12px); text-decoration: none; margin: 1px auto; line-height: 1.2; max-width: 90%;">
+        &copy; 2025 我的网站. 保留所有权利.
+    </a>
+    <a href="https://lenglingkali.github.io/lengling.github/认证.html" target="blank" style="display: block; color: #2196f3; font-size: clamp(10px, 1.5vw, 12px); text-decoration: none; margin: 1px auto; line-height: 1.2; max-width: 90%;">
+        赖** 已实名.归我所有!
+    </a>
+</footer>
 </body>
 </html>
