@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>常用网址收藏夹</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "微软雅黑", sans-serif; background: #f5f7fa; line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        h1 { color: #2c3e50; text-align: center; margin: 20px 0; font-size: 28px; }
+        /* 搜索框样式优化 */
+        .search-box { text-align: center; margin: 30px 0; }
+        #search-input { width: 80%; max-width: 500px; padding: 12px 20px; border: 2px solid #3498db; border-radius: 30px; font-size: 16px; outline: none; transition: all 0.3s ease; }
+        #search-input:focus { border-color: #2980b9; box-shadow: 0 0 10px rgba(52, 152, 219, 0.2); }
+        /* 分类卡片样式优化 */
+        .category { margin: 40px 0; }
+        .category-title { color: #3498db; border-left: 4px solid #3498db; padding-left: 15px; margin-bottom: 20px; font-size: 22px; }
+        .links-list { display: flex; flex-wrap: wrap; gap: 15px; }
+        .link-card { 
+            background: white; 
+            padding: 20px; 
+            border-radius: 10px; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
+            flex: 1; 
+            min-width: 250px; 
+            transition: transform 0.3s ease;
+        }
+        .link-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.15); }
+        .link-item { margin-bottom: 15px; } /* 新增：分隔多个链接 */
+        .link-item:last-child { margin-bottom: 0; } /* 最后一个链接取消底部间距 */
+        .link-card a { text-decoration: none; color: #2c3e50; font-weight: 500; font-size: 16px; }
+        .link-card a:hover { color: #3498db; text-decoration: underline; }
+        .link-desc { color: #7f8c8d; font-size: 14px; margin-top: 5px; line-height: 1.5; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔗 常用网址收藏夹</h1>
+        <!-- 搜索功能 -->
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="搜索网址（名称/描述）...">
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- 个人用分类 -->
+        <div class="category">
+            <h2 class="category-title">👤 个人用</h2>
+            <div class="links-list">
+                <div class="link-card">
+                    <!-- 修复1：修正github网址拼写错误（htyps→https） -->
+                    <div class="link-item">
+                        <a href="https://pc.vivo.com.cn/suite?origin=cloudWeb&openid=92054a280dde06bf" target="_blank">vivo办公套件网页版</a>
+                        <p class="link-desc">网页办公,网盘,查找设备</p>
+                    </div>
+                     <div class="link-item">
+                        <a href="http://dashboard.cpolar.com/login" target="_blank">cpolar官网</a>
+                        <p class="link-desc">编辑测试网站</p>
+                   <div class="link-item">
+                        <a href="https://github.com" target="_blank">GitHub官网</a>
+                        <p class="link-desc">网站部署、代码托管、开发工具</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <!-- 学校网址分类 -->
+        <div class="category">
+            <h2 class="category-title">🏫 学校网址</h2>
+            <div class="links-list">
+                <div class="link-card">
+                    <div class="link-item">
+                        <a href="https://lenglingkali.github.io/lengling.github/index.html" target="_blank">班级专属照片墙网站</a>
+                        <p class="link-desc">班级同学照片展示、回忆收藏</p>
+                    </div>
+                    <div class="link-item">
+                        <a href="https://lengling-github.pages.dev/index.html" target="_blank">班级照片墙网站（另一个服务器）</a>
+                        <p class="link-desc">github关联的班级照片墙网站</p>
+
+
+                    <div class="link-item">
+                        <a href="https://lenglingkali.github.io/lengling.github/更新日记.html" target="_blank">班级照片墙更新日记</a>
+                        <p class="link-desc">事实查看更新状态,获得最新内容</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- 搜索功能脚本（保持原有逻辑，优化代码格式） -->
+    <script>
+        const searchInput = document.getElementById('search-input');
+        const linkCards = document.querySelectorAll('.link-card');
+
+        searchInput.addEventListener('input', function() {
+            const searchText = this.value.toLowerCase().trim();
+            linkCards.forEach(card => {
+                const cardText = card.textContent.toLowerCase();
+                card.style.display = cardText.includes(searchText) ? 'block' : 'none';
+            });
+        });
+    </script>
+<!-- 极致小巧+仅这段文字居中 -->
+<footer style="text-align: center; margin-top: auto; padding: 5px 0; width: 100%;">
+    <a href="https://lenglingkali.github.io/lengling.github/认证.html" target="blank" style="display: block; color: #2196f3; font-size: clamp(10px, 1.5vw, 12px); text-decoration: none; margin: 1px auto; line-height: 1.2; max-width: 90%;">
+        &copy; 2025 我的网站. 保留所有权利.
+    </a>
+    <a href="https://lenglingkali.github.io/lengling.github/认证.html" target="blank" style="display: block; color: #2196f3; font-size: clamp(10px, 1.5vw, 12px); text-decoration: none; margin: 1px auto; line-height: 1.2; max-width: 90%;">
+        赖** 已实名.归我所有!
+    </a>
+</footer>
+</body>
+</html>
