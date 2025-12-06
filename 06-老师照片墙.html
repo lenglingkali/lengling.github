@@ -1,1 +1,287 @@
-<h1>正在开发中......</h1>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025~2026届 初一老师照片墙</title>
+    <!-- 引入LazyLoad库（图片懒加载） -->
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.min.js"></script>
+    <style>
+        /* 基础重置与全局样式 - 极简风格 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "微软雅黑", "PingFang SC", sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column; /* 让页脚自动居底 */
+        }
+        /* 页面标题 - 简化 */
+        .page-title {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .page-title h1 {
+            font-size: 22px;
+            font-weight: 500;
+            color: #333;
+        }
+        .page-title p {
+            font-size: 14px;
+            color: #999;
+            margin-top: 5px;
+        }
+        /* 折叠组件 - 极简化 */
+        details {
+            border: none;
+            background: transparent;
+            padding: 0;
+            margin-bottom: 10px;
+        }
+        summary {
+            font-size: 16px;
+            color: #666;
+            cursor: pointer;
+            list-style: none;
+            margin-bottom: 15px;
+        }
+        summary::before {
+            content: "🤓";
+            margin-right: 8px;
+            font-size: 14px;
+        }
+        /* 核心：极简照片网格 - 参考示例样式 */
+        .photo-wall {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* 小卡片宽度 */
+            gap: 15px; /* 卡片间距 */
+        }
+        /* 极简教师卡片 */
+        .teacher-card {
+            text-align: center;
+            background-color: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: border-color 0.2s ease;
+        }
+        .teacher-card:hover {
+            border-color: #4299e1;
+        }
+        /* 照片容器 - 关键修改：让照片完整显示 */
+        .img-box {
+            width: 100%;
+            height: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8f8f8;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        /* 照片样式 - 完整显示，不裁剪 */
+        .teacher-card img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain; /* 完整显示照片，不裁剪 */
+        }
+        /* 姓名样式 - 极简文字 */
+        .teacher-name {
+            font-size: 14px;
+            color: #333;
+            padding: 8px 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        /* 功能链接区域 - 简化 */
+        .links-section {
+            margin: 30px 0;
+            text-align: center;
+        }
+        .link-btn {
+            display: inline-block;
+            padding: 6px 15px;
+            font-size: 14px;
+            color: #4299e1;
+            text-decoration: none;
+            border: 1px solid #4299e1;
+            border-radius: 4px;
+        }
+        /* 图片预览弹窗 - 保留功能，样式简化 */
+        .img-preview-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            padding: 20px;
+        }
+        .preview-img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        /* 页脚 - 极致小巧+居中（保留inline样式，删除重复定义） */
+        footer {
+            text-align: center;
+            margin-top: auto; /* 自动推到页面底部 */
+            padding: 5px 0;
+            width: 100%;
+            border-top: 1px solid #e0e0e0;
+            margin-top: 30px;
+        }
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .photo-wall {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            }
+            .img-box {
+                height: 100px; /* 移动端照片容器高度 */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 页面标题 -->
+    <div class="page-title">
+        <h1>班级教师照片墙</h1>
+        <p>照片有限,欢迎投稿,投稿看更新日记</p>
+    </div>
+
+    <!-- 折叠式照片墙 -->
+    <details open>
+        <summary>教师照片墙</summary>
+         <p>点击可放大预览！</p>
+        <div class="photo-wall">
+            <!-- 教师卡片 - 极简样式（带完整照片显示） -->
+            <div class="teacher-card" data-img="啊鼠.jpg">
+                <div class="img-box">
+                    <img class="lazy" src="啊鼠.jpg" data-src="啊鼠.jpg" alt="啊鼠">
+                </div>
+                <div class="teacher-name">啊鼠</div>
+            </div>
+            <!-- 可复制以下模板添加更多教师 -->
+            <!-- <div class="teacher-card" data-img="教师2.jpg">
+                <div class="img-box">
+                    <img class="lazy" src="教师2.jpg" data-src="教师2.jpg" alt="李老师">
+                </div>
+                <div class="teacher-name">李老师</div>
+            </div>
+            <div class="teacher-card" data-img="教师3.jpg">
+                <div class="img-box">
+                    <img class="lazy" src="教师3.jpg" data-src="教师3.jpg" alt="张老师">
+                </div>
+                <div class="teacher-name">张老师</div>
+            </div> -->
+        </div>
+    </details>
+
+    <!-- 功能链接区域 -->
+    <div class="links-section">
+        <a href="http://localhost:9100/03-更新日记.html" target="_blank" class="link-btn">更新日志</a>
+    </div>
+
+    <!-- 图片预览弹窗 -->
+    <div class="img-preview-modal" id="imgModal">
+        <span class="close-modal" id="closeModal">&times;</span>
+        <img class="preview-img" id="previewImg" src="" alt="教师照片预览">
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1>&nbsp;</h1>
+<h1>&nbsp;</h1>
+<h1>&nbsp;</h1>
+    <!-- 页脚 - 保留极致小巧+居中样式，删除重复标签 -->
+    <footer>
+        <a href="https://lenglingkali.github.io/lengling.github/04-认证.html" target="blank" style="display: block; color: #2196f3; font-size: clamp(10px, 1.5vw, 12px); text-decoration: none; margin: 1px auto; line-height: 1.2; max-width: 90%;">
+            &copy; 2025 我的网站. 保留所有权利.
+        </a>
+        <a href="https://lenglingkali.github.io/lengling.github/04-认证.html" target="blank" style="display: block; color: #2196f3; font-size: clamp(10px, 1.5vw, 12px); text-decoration: none; margin: 1px auto; line-height: 1.2; max-width: 90%;">
+            赖** 已实名.归我所有!
+        </a>
+    </footer>
+
+    <script>
+        // 初始化懒加载
+        const lazyLoadInstance = new LazyLoad({
+            elements_selector: ".lazy",
+            load_delay: 200
+        });
+
+        // 获取DOM元素
+        const modal = document.getElementById('imgModal');
+        const previewImg = document.getElementById('previewImg');
+        const closeModal = document.getElementById('closeModal');
+        const teacherCards = document.querySelectorAll('.teacher-card');
+
+        // 点击卡片打开预览
+        teacherCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const imgSrc = card.getAttribute('data-img');
+                previewImg.src = imgSrc;
+                modal.style.display = 'flex';
+            });
+        });
+
+        // 关闭弹窗
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) modal.style.display = 'none';
+        });
+
+        // 点击预览图全屏
+        previewImg.addEventListener('click', () => {
+            if (previewImg.requestFullscreen) previewImg.requestFullscreen();
+            else if (previewImg.webkitRequestFullscreen) previewImg.webkitRequestFullscreen();
+            else if (previewImg.msRequestFullscreen) previewImg.msRequestFullscreen();
+        });
+    </script>
+</body>
+</html>
